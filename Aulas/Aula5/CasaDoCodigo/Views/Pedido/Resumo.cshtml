@@ -3,6 +3,7 @@
 }
 
 @model Pedido;
+
 <h3>Resumo do Pedido</h3>
 
 <div class="panel panel-default">
@@ -39,8 +40,6 @@
 
         @foreach (var item in Model.Itens)
         {
-
-
             <div class="row">
                 <div class="col-md-10">
                     <div>@item.Produto.Nome</div>

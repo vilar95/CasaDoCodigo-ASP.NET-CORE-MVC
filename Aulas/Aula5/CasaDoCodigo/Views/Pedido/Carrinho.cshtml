@@ -3,7 +3,8 @@
 }
 @model CarrinhoViewModel;
 
-<form method="post" asp-action="carrinho"></form>
+<form method="post" asp-action="carrinho">
+</form>
 
 <h3>Meu Carrinho</h3>
 
@@ -31,7 +32,6 @@
 
         @foreach (var item in Model.Itens)
         {
-
                 <div class="row row-center linha-produto" item-id="@item.Id">
                     <div class="col-md-3">
                         <img class="img-produto-carrinho" src="/images/produtos/large_@(item.Produto.Codigo).jpg" />
@@ -48,10 +48,10 @@
                             </span>
                             <input type="text" value="@(item.Quantidade)"
                                class="form-control text-center" 
-                               onblur="carrinho.updatQuantidade(this)"/>
+                               onblur="carrinho.updateQuantidade(this)"/>
                             <span class="input-group-btn">
                                 <button class="btn btn-default"
-                                    onclick="carrinho.clickIncremento(this)">
+                                onclick="carrinho.clickIncremento(this)">
                                     <span class="glyphicon-plus"></span>
                                 </button>
                             </span>
@@ -63,7 +63,6 @@
                         </span>
                     </div>
                 </div>
-
         }
 
     </div>
@@ -90,7 +89,7 @@
             <a class="btn btn-success" asp-action="carrossel">
                 Adicionar Produtos
             </a>
-            <a class="btn btn-success" asp-action="resumo">
+            <a class="btn btn-success" asp-action="cadastro">
                 Preencher Cadastro
             </a>
         </div>
@@ -99,8 +98,8 @@
 
 @section Scripts
 {
-    <script src="~/js/Carrinho.js">
-
+    <script src="~/js/carrinho.js">
+    
     </script>
 }
 
