@@ -14,7 +14,7 @@ namespace CasaDoCodigo.Repositories
         Pedido GetPedido();
         void AddItem(string codigo);
         UpdateQuantidadeResponse UpdateQuantidade(ItemPedido itemPedido);
-        Pedido UpDateCadastro(Cadastro cadastro);
+        Pedido UpdateCadastro(Cadastro cadastro);
     }
 
     public class PedidoRepository : BaseRepository<Pedido>, IPedidoRepository
@@ -113,7 +113,7 @@ namespace CasaDoCodigo.Repositories
             throw new ArgumentException("ItemPedido não encontrado ");
         }
 
-        public Pedido UpDateCadastro(Cadastro cadastro)
+        public Pedido UpdateCadastro(Cadastro cadastro)
         {
             var pedido = GetPedido();
             cadastroRepository.Update(pedido.Cadastro.Id, cadastro);

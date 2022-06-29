@@ -58,7 +58,7 @@ namespace CasaDoCodigo.Controllers
         {
             if (ModelState.IsValid)
             {
-                return View(pedidoRepository.UpDateCadastro(cadastro));
+                return View(pedidoRepository.UpdateCadastro(cadastro));
             }
             return RedirectToAction("Cadastro");
         }
